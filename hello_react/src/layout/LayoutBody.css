@@ -1,0 +1,18 @@
+section.main-body {
+  display: flex;
+  justify-content: center;
+}
+
+article.main-left {
+  width: 65%;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid bisque;
+}
+
+article.main-right {
+  width: 30%;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid bisque;
+}

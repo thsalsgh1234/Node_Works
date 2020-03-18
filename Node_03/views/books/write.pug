@@ -1,0 +1,53 @@
+extends ../index
+
+block body
+
+    script.
+        $(function(){
+            
+            $("#btn_insert").click(function(){
+
+                let name = $("#BName").val()
+                $.get("/book/name", {name:name}, function(result){
+                    if(result){
+                         let retName = result.BName
+                        if(name == retName){
+                            alert("이미 등록된 도서입니다.")
+                            return false
+                        }
+                    }
+                    $("form").submit()
+                })
+            })
+
+            $("#btn_delete").click(function(){
+
+                if(confirm("삭제할까요?")){
+                    let id = $(this).attr("data-id")
+                    document.location.replace("/book/delete/" + id)
+                }
+            })
+
+            $("#btn_list").click(function(){
+                document.location.replace("/book")
+            })
+
+        })
+
+    form(method='POST')
+        - var inputClasses = ['w3-input']
+        .w3-container
+            input#BName(name='BName',type='text',class=inputClasses, placeholder='이름', value=book.BName)
+        .w3-container
+            input#BWriter(name='BWriter',type='text',class=inputClasses, placeholder='저자', value=book.BWriter)
+        .w3-container
+            input#BComp(name='BComp',type='text',class=inputClasses, placeholder='출판사', value=book.BComp)
+        .w3-container
+            input#BYear(name='BYear',type='text',class=inputClasses, placeholder='출판연도', value=book.BYear)
+        .w3-container
+            input#BPrice(name='BPrice',type='text',class=inputClasses, placeholder='가격', value=book.BPrice)
+
+        - var btnClasses = ['w3-button','w3-blue','w3-right','w3-margin']
+        button#btn_insert(type='button', class=btnClasses)= btnText
+        button#btn_delete(type='button', class=btnClasses, data-id=book.id).w3-red 삭제
+        button#btn_list(type='button', class=btnClasses).w3-green 목록으로 

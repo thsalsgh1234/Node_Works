@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= title
+  p 여기는 #{title}
+
+  form(action="/book/naver", method="POST")
+    input(type="text", name="search", placeholder="검색할 도서명 입력")

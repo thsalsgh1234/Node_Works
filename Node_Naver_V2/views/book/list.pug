@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+    style.
+        .elipsis {
+            
+            width : 100px;
+            white-space : nowrap;
+            overflow : hidden;
+            text-overflow : ellipsis;
+        }
+    each book,index in books
+        div
+            p
+               
+                a(href=book.link) !{book.title}
+            p
+                img(src=book.image)
+            p= book.isbn
+            p= book.price
+            p= book.publisher
+            p= book.author
+            p= book.pubdate

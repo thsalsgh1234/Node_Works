@@ -1,0 +1,31 @@
+extends ../layout 
+
+block content
+
+    div.container
+        div.jumbotron.text-center
+            h2.font-weight-bold 영화 검색 결과
+
+
+    div.container
+        div.form-group.mb-5
+            form(action="/naver/movie")
+                input(name="search", placeholder="검색어를 입력하세요").form-control
+
+    div.container
+            
+        each movie, index in movies
+            
+            div.row
+                div.col-3.d-flex.justify-content-center
+                    img(src=movie.image)
+                div.col-9
+                    div.align-self-center
+                        p= '제목: '
+                            a(href=movie.link).mr-2 !{movie.title}
+                            small= movie.subtitle
+                            small= movie.pubDate
+                        p= '감독: ' + movie.director
+                        p= '배우: ' + movie.actor
+                        p= '평점: ' + movie.userRating
+            <hr>

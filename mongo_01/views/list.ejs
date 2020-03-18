@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2> 회원리스트 </h2>
+    <table border='1'>
+        <tr>
+            <th>이름</th>
+            <th>주소</th>
+            <th>전화번호</th>
+            <th>나이</th>
+            <th>!</th>
+        </tr>
+        <% members.forEach(function(mem){ %>
+
+            <tr>
+                <td>
+                    <a href="/member/update/<%- mem._id%>">
+                    <%- mem.strName %>
+                    </a>
+                </td>    
+                <td><%- mem.strAddr %></td>
+                <td><%- mem.strTel %></td>
+                <td><%- mem.strAge %></td>
+                <td>
+                    <a href="/member/delete/<%- mem._id%>">
+                        삭제
+                    </a>
+                </td>
+            </tr>
+
+        <% }) %>
+
+    </table>
+    <a href ="/member/insert">추가</a>
+
+</body>
+</html>
