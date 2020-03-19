@@ -66,7 +66,7 @@ class App extends Component {
   };
 
   handleCreate = () => {
-    const { input, todoList } = this.state;
+    const { input, todoList } = this.state; // this 는 app.js를 가리키고있음
     this.setState({
       input: "",
       // 기존 객체(JSON)배열에 새로운 객체(JSON)를 추가하는 함수
@@ -80,7 +80,9 @@ class App extends Component {
 
   handleToggle = id => {
     // 여기부터
-
+    // thos : 화살표 함수로 돠어있는 이벤트 핸들러는
+    // this가 바로 현재 component이다.
+    // this = App.js의 context(문맥, thread의 모든 정보를 담고 있는 것)
     const { todoList } = this.state;
 
     // id 매개변수에 담겨있는 값이
