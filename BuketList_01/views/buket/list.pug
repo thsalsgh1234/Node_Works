@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+    script.
+        $(function(){
+            $(".btn-insert").click(function(){
+                document.location.href="/buket/insert"
+            })
+            $('.buket_tr').click(function(){
+                let id = $(this).data("id")
+                document.location.href="/buket/update/" + id
+            })
+        })
+
+    table.w3-table-all.w3-bordered.w3-hoverable
+        tr.w3-gray
+            th No
+            th 목표
+            th 작성일
+            th 기한
+            th 달성여부
+            
+        each buket, index in bukets
+            tr(data-id=buket._id).buket_tr
+                td= index + 1
+                td= buket.bGoal
+                td= buket.bYear
+                td= buket.bDeadline
+                td= buket.bSuccess
+    button.w3-button.w3-blue.w3-right.btn-insert 추가
+
+

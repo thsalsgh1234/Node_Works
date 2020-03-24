@@ -1,0 +1,59 @@
+extends ../layout
+
+block content
+    script.
+        $(function(){
+            $(".btn-delete").click(function(){
+                if(confirm("달성하고 삭제하는거?")) {
+                    document.location.replace("/buket/delete/#{buket._id}")
+                }
+            })
+            $(".btn-list").click(function(){
+                document.location.replace("/buket")
+            })
+        })
+
+    form(method='POST').w3-container
+        fieldset.w3-border-blue
+            if formTitle == 'UPDATE'
+                legend 버킷리스트수정 
+            else 
+                legend 버킷리스트수정   
+
+            - var inputClasses = ['w3-input','w3-border']
+            .w3-container
+                label(for="bGoal").w3-text-blue 목표
+                input#bGoal(
+                    name="bGoal",
+                    value=buket.bGoal, 
+                    class=inputClasses)
+
+            .w3-container
+                label(for="bYear").w3-text-blue 작성일
+                input#bYear(
+                    name="bYear",
+                    value=buket.bYear,
+                    class=inputClasses)
+
+            .w3-container
+                label(for="bDeadline").w3-text-blue 기한
+                input#bDeadline(
+                    name="bDeadline",
+                    value=buket.bDeadline,
+                    class=inputClasses)
+
+            .w3-container
+                label(for="bSuccess").w3-text-blue 달성여부
+                input#bSuccess(
+                    name="bSuccess",
+                    value=buket.bSuccess,
+                    class=inputClasses)
+
+
+            - var btnClasses = ['w3-button','w3-right']
+            
+            button(class=btnClasses).w3-blue.btn-save 저장
+            if formTitle == 'UPDATE'
+
+                button(type='button',class=btnClasses).w3-red.btn-delete 삭제
+                button(type='button',class=btnClasses).w3-green.btn-list 리스트로돌아가기
