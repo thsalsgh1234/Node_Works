@@ -27,10 +27,11 @@ class BucketMain extends Component {
 
     // 문자열, 객체일경우 if 조건에서 없으면 false , 있으면 true
     if (strBucketList) {
+      const jsonBucketList = JSON.parse(strBucketList);
       this.setState({
-        bucketList: JSON.parse(strBucketList)
+        bucketList: jsonBucketList
       });
-      this.id = this.state.bucketList.length + 1;
+      this.id = jsonBucketList.length;
     }
   }
   // 화면에 rendering이 끝나고
@@ -105,7 +106,7 @@ class BucketMain extends Component {
       // 나머지 요소가 bucket에서 정의한 형태의 객체(vo)를 생성하여
       // 원본의 bucketList에 추가하여
       // 새로운 bucketList를 생성하라
-      bucketList: bucketList.concat({ b_id: ++this.id, ...bucket })
+      bucketList: bucketList.concat({ ...bucket })
     });
   };
 

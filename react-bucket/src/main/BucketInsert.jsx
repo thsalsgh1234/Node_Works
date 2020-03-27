@@ -27,9 +27,15 @@ class BucketInsert extends Component {
    */
   handleOnKeyPress = ev => {
     const { bucket_add } = this.props;
+    const { bucket_title } = this.state;
     if (ev.key === "Enter") {
       // alert(this.state.bucket_title);
-      bucket_add(this.state.bucket_title);
+      if (bucket_title === "") {
+        alert("버킷은 입력한 후에 Enter를 누르세요");
+        return false;
+      }
+      // bucket_add(this.state.bucket_title); // 정형적
+      bucket_add(bucket_title); // 비정형적, 비구조적 , 분해후 독립변수로 사용
       this.setState({
         bucket_title: ""
       });
