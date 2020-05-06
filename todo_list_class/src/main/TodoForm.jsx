@@ -9,7 +9,8 @@ const TodoForm = ({ value, onCreate, onChange, onKeyPress }) => {
         value={value}
         onChange={onChange}
         onKeyPress={onKeyPress}
-      ></input>
+      />
+
       <div className="todo-insert" onClick={onCreate}>
         추가
       </div>

@@ -7,7 +7,7 @@ div.todo-item {
 }
 
 div.todo-item:hover {
-  background-color: #d4dfe6;
+  background-color: #e3fafc;
 }
 
 div.delete-item {
@@ -34,6 +34,7 @@ div.checked {
 div.check-mark {
   font-size: 1.5rem;
   line-height: 1rem;
-  margin-right: 1rem;
-  color: #6aafe6;
+  margin-left: 1rem;
+  color: #3bc9db;
+  font-weight: 800;
 }

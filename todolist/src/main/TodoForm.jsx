@@ -1,11 +1,13 @@
 import React from "react";
 import "./TodoForm.css";
 
-const TodoForm = ({ value }) => {
+const TodoForm = ({ value, onClick }) => {
   return (
     <div className="form">
-      <input type="text" value={value}></input>
-      <div className="todo-insert">추가</div>
+      <input id="item" type="text" value={value}></input>
+      <div className="todo-insert" onClick={onClick}>
+        추가
+      </div>
     </div>
   );
 };

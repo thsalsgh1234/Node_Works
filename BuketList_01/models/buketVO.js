@@ -6,5 +6,4 @@ var buketVO = mongoose.Schema({
     bDeadline: String,
     bSuccess: String
 })
-
 module.exports = mongoose.model("tbl_buket", buketVO)

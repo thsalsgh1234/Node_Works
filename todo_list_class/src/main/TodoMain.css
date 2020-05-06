@@ -1,25 +1,19 @@
-.todoTemplete {
+main.todoTemplete {
   background-color: white;
   width: 520px;
   margin: 4rem auto;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  border: 1px solid black;
 }
 
-.title {
+div.title {
   padding: 2rem;
   font-size: 2.5rem;
   text-align: center;
-  font-weight: bold;
-  background-color: #6aafe6;
+  background-color: #22b8cf;
   color: white;
 }
 
-.form-controller {
+div.form-controller {
   padding: 1rem;
-  background-color: gray;
-  color: white;
-}
-
-.todolist-controler {
+  border-bottom: 1px solid #22b8cf;
 }

@@ -4,8 +4,8 @@ import "./TodoItem.css";
 class TodoItem extends Component {
   shouldComponentUpdate(nextProps, nextState) {
     return this.props.checked !== nextProps.checked;
-    // return true;
   }
+
   render() {
     const { id, text, checked, onToggle, onDelete } = this.props;
     return (

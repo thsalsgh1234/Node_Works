@@ -1,8 +1,7 @@
 import React from "react";
 
 /*
-
-    bbsList를 매개변수로 받아서
+bbsList를 매개변수로 받아서
     <li>BBS1</li>
     <li>BBS2</li>
     <li>BBS3</li>
@@ -14,9 +13,9 @@ import React from "react";
 //   return <div>{bbsMap}</div>;
 // };
 
-// const BBsList = ({bbsList})=>{
-//     return bbsList.map(bbs => <li key={bbs._id}>{bbs.b_title}</li>)
-// }
+// const BBsList = ({ bbsList }) => {
+//   return bbsList.map(bbs => <li key={bbs._id}>{bbs.b_title}</li>);
+// };
 
 const BBsList = ({ bbsList }) => {
   const bbsMap = bbsList.map(bbs => {
@@ -28,6 +27,7 @@ const BBsList = ({ bbsList }) => {
       </tr>
     );
   });
+
   return (
     <table className="w3-table w3-table-all">
       <tr>

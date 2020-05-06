@@ -1,22 +1,26 @@
-.form {
+div.form {
   display: flex;
 }
 
-.form input {
+div.form input {
   flex: 1;
-  font-size: 1rem;
-  padding: 0.25rem;
+  font-size: 1.25rem;
   outline: none;
-  border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid #c5f6fa;
 }
 
-.todo-insert {
+div.todo-insert {
+  /* top, bottom 0.5, left와 right 1rem */
   padding: 0.5rem 1rem;
   margin-left: 1rem;
-  border: none;
-  background-color: #cadbe9;
-  color: black;
-  font-weight: bold;
+  background-color: #22b8cf;
+  border-radius: 3px;
+  color: white;
+  font-weight: 600;
   cursor: pointer;
-  border-radius: 5px;
+}
+
+div.todo-insert:hover {
+  background-color: #3bc9db;
 }

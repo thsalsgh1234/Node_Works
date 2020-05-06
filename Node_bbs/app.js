@@ -8,7 +8,7 @@ var dbConn = mongoose.connection;
 var cors = require("cors");
 
 dbConn.once("open", () => {
-  console.log("MongoDB open OK!");
+  console.log("MongDB open OK!!");
 });
 
 dbConn.on("error", () => {
@@ -24,7 +24,6 @@ var usersRouter = require("./routes/users");
 var bbsRouter = require("./routes/bbsRouter");
 
 var app = express();
-
 app.use(cors());
 
 // view engine setup

@@ -1,16 +1,19 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-class BBsinsert extends Component {
+class BBsInsert extends Component {
   state = {
     b_title: ""
   };
-  // // 키보드로 입력박스에 문자를 입력하면 그 문자를 b_title에 저장하라
+
+  // 키보드로 입력박스에 문자를 입력하면
+  // 그 문자를 b_title에 저장하라
   handleChange = e => {
     console.log(e.target.value);
     this.setState({ ...this.state, b_title: e.target.value });
     console.log("B_TITLE", this.state.b_title);
   };
+
   bbsAxiosSubmit = () => {
     const { bbs_insert_url } = this.props;
     axios
@@ -20,7 +23,7 @@ class BBsinsert extends Component {
     return false;
   };
 
-  // ajax를 이용하여 서버에 데이터를 보내기
+  // ajax이용하여 서버에 데이터를 보내기
   bbsInsertSubmit = () => {
     const { bbs_insert_url } = this.props;
     let formData = new FormData();
@@ -57,11 +60,11 @@ class BBsinsert extends Component {
           />
         </div>
         <div className="w3-col s3 w3-padding">
-          <button className="w3-button w3-blue w3-third">저장</button>
+          <button className="w3-button w3-blue">저장</button>
         </div>
       </form>
     );
   }
 }
 
-export default BBsinsert;
+export default BBsInsert;

@@ -6,8 +6,9 @@ import "./TodoMain.css";
 /*
 함수형 컴포넌트
 화살표 함수 형으로 코드가 시작되고
-render() 함수 없고 바로 return()
+render() 함수 없고 바로 return ()
 */
+
 const TodoMain = ({
   input,
   todoList,
