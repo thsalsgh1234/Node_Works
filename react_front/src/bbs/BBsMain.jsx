@@ -37,14 +37,8 @@ class BBsMain extends Component {
 
     const { bbsList } = this.state;
     return (
-      <div className="container-fluid text-center">
-        <header className="jumbotron">
-          <h2>MY BBS REACT</h2>
-          <p>Spring Boot &amp; React BBS Project</p>
-        </header>
-        <div className="container">
-          <BBsList bbsList={bbsList} />
-        </div>
+      <div className="container">
+        <BBsList bbsList={bbsList} />
       </div>
     );
   }

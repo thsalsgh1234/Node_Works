@@ -1,68 +1,20 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Front Project
 
-## Available Scripts
+## Spring boot 서버와 React를 연동한 Front Project
 
-In the project directory, you can run:
+- Spring Boot REST Full 서버로 화면단이 없는 순수한 서버
+- React 는 서버로 부터 데이터를 수신하여 View만을 담당하는 역할 수행
 
-### `yarn start`
+- Spring 을 사용하느 REST Full 서버는 @RestController를 사용해서 모든 정보를 JSON으로 보내는 구조가 된다.
+- React는 Fetch, Axios등의 도구를 사용하여 서버에 데이터를 요청하고 수신한 데이터를 미리 만들어진 컴포넌트를 사용하여 Render를 한 후 보여주는 역할을 수행한다.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## react-router-dom
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- react는 전통적으로 SPA(Single Page Application) 구조를 가지고 있다.
+  한페이지에 스크롤을 하면서 모든 정보를 표현하는 방식
 
-### `yarn test`
+- menu(nav)를 사용해서 페이지를 전환하는 것이 없었다.
+- App을 만들다 보니 SPA에서도 메뉴라는 것이 필요하거나 CRUD 같은 것들을 구현할떄
+  SPA 방식에서는 어색하고 한계가 있었다.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- 그래서 탄생한 것이 router 플러그인 이다.
