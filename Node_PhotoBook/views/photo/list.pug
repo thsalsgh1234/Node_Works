@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+    script.
+        $(function(){
+            $("button.upload").click(function(){
+                document.location.href = "/photo/upload"
+            })
+            $(".image-view").click(function(){
+                let id = $(this).data('id')
+                document.location.href="/photo/view/" + id
+            })
+
+        })
+
+ 
+    
+    section.container-fluid.row
+        each photo,index in photos
+            .card.image-view(style="width:300px;",data-id=photo._id).m-2
+                .card-header= photo.pTitle
+                img.card-img-top(src="/images/" + photo.pPhotoName)
+                .card-body= photo.pText
+
+    section.container.fluid.text-right
+        button.btn.btn-primary.upload 사진업로드

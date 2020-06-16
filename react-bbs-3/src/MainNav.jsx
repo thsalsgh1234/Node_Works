@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const MainNav = () => {
   return (
-    <nav className=" navbar-expand bg-primary">
+    <nav className="navbar navbar-expand bg-primary">
       <ul className="navbar-nav text-white">
         <li className="nav-item">
           <Link to="/" className="nav-link">
